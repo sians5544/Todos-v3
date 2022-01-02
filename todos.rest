@@ -1,0 +1,41 @@
+GET http://localhost:9000/todos
+
+###
+POST http://localhost:9000/todos
+Content-Type: application/json
+
+{
+  "id":4, "content": "test", "completed":false
+}
+
+###
+# payload = {content} or {completed}
+
+PATCH http://localhost:9000/todos/3
+Content-Type:  application/json
+
+# {
+#   "completed":true
+# }
+{
+  "content":"test"
+}
+
+
+###
+PATCH http://localhost:9000/todos
+Content-Type:  application/json
+
+{
+  "completed":false
+}
+
+###
+DELETE  http://localhost:9000/todos/3
+Content-Type:  application/json
+
+#completed 가 true 인 애들만 지워야함 
+###
+DELETE  http://localhost:9000/todos?completed=false
+Content-Type:  application/json
+
